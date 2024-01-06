@@ -12,7 +12,7 @@ try {
   isDeno = true
 } catch {}
 
-if (!isBun && !isDeno) {
+if (!isBun && !isDeno && process?.versions?.node != undefined) {
   isNode = true
 }
 

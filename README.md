@@ -1,2 +1,4 @@
 # wat.js
-Wat am I?
+
+Wat will try to discover the current JavaScript runtime.
+

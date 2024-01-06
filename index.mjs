@@ -1,5 +1,6 @@
 let isBun = false
 let isDeno = false
+let isGraalNode = false
 let isNode = false
 
 try {
@@ -12,8 +13,17 @@ try {
   isDeno = true
 } catch {}
 
-if (!isBun && !isDeno && process?.versions?.node != undefined) {
-  isNode = true
+try {
+  !!Java;
+  isGraalNode = true
+} catch {}
+
+if (!isBun && !isDeno && !isGraalNode) {
+  try {
+    if (process.versions?.node != undefined) {
+      isNode = true
+    }
+  } catch {}
 }
 
-export { isBun, isDeno, isNode }
+export { isBun, isDeno, isGraalNode, isNode }

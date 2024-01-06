@@ -1,15 +1,16 @@
 {
   "name": "wat",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Discover the current JavaScript runtime",
   "main": "index.mjs",
   "type": "module",
   "scripts": {
-    "test": "npm run test:bun && npm run test:deno && npm run test:node",
+    "test": "npm run test:bun && npm run test:deno && npm run test:graalnode && npm run test:node",
     "test:bun": "bun test.bun.js",
     "test:deno": "deno run test.deno.js",
+    "test:graalnode": "graalnode test.graalnode.js",
     "test:node": "node test.node.js"
   },
-  "keywords": ["bun", "deno", "node.js"],
+  "keywords": ["bun", "deno", "graalnode", "node"],
   "license": "MIT"
 }
